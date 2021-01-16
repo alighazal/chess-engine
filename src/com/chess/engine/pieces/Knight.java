@@ -69,7 +69,6 @@ public class Knight extends Piece {
         return (BoardUtils.SEVENTH[piecePosition] && ( moveOffset == -6 || moveOffset == 10) );
     }
 
-
     private static boolean isEighthColumnExclusion (int piecePosition, int moveOffset){
         return (BoardUtils.EIGHTH[piecePosition] &&
                 ( moveOffset == 17 || moveOffset == 10 || moveOffset == -6 || moveOffset == -15 ) );
