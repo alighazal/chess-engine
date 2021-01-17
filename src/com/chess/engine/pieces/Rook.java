@@ -13,11 +13,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Bishop extends Piece {
+public class Rook extends Piece {
 
-    private static final int[] POSSIBLE_MOVES_VECTOR = {-9, -7, 7, 9};
+    private static final int[] POSSIBLE_MOVES_VECTOR = {-1, 1, 8, -8};
 
-    Bishop(int piecePosition, Alliance pieceAlliance) {
+
+    Rook(int piecePosition, Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
@@ -57,10 +58,10 @@ public class Bishop extends Piece {
     }
 
     private static boolean isFirstColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.FIRST[piecePosition] && ( moveOffset == 7 || moveOffset == -9 ));
+        return (BoardUtils.FIRST[piecePosition] && ( moveOffset == -1 ));
     }
     private static boolean isEighthColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.EIGHTH[piecePosition] && ( moveOffset == -7 || moveOffset == 9 ) );
+        return (BoardUtils.EIGHTH[piecePosition] && ( moveOffset == 1) );
     }
 
 }
