@@ -5,10 +5,13 @@ public class BoardUtils {
     public static final int NUM_COLS = 8;
     public static final int NUM_TILES = 64;
 
-    public static final boolean[] FIRST = initColumns(0) ;
-    public static final boolean[] SECOND = initColumns(1) ;
-    public static final boolean[] SEVENTH = initColumns(7) ;
-    public static final boolean[] EIGHTH = initColumns(8) ;
+    public static final boolean[] FIRST_COL = initColumns(0) ;
+    public static final boolean[] SECOND_COL = initColumns(1) ;
+    public static final boolean[] SEVENTH_COL = initColumns(7) ;
+    public static final boolean[] EIGHTH_COL = initColumns(8) ;
+
+    public static final boolean[] SECOND_ROW = null ;
+    public static final boolean[] SEVENTH_ROW = null ;
 
     BoardUtils (){
         throw new RuntimeException("you can't instantiate this class");
