@@ -15,10 +15,12 @@ import java.util.List;
 
 public class Knight extends Piece {
 
+    
     private static final int[] POSSIBLE_MOVES_COORDINATES = {-17, -15, -10, -6, 6, 10, 15, 17};
-
-    Knight(final int piecePosition, final Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    
+    
+    Knight(int piecePosition, Alliance pieceAlliance, boolean isFisrtMove) {
+        super(piecePosition, pieceAlliance, isFisrtMove);
     }
 
     @Override
@@ -57,20 +59,20 @@ public class Knight extends Piece {
 
 
     private static boolean isFirstColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.FIRST[piecePosition] &&
+        return (BoardUtils.FIRST_COL[piecePosition] &&
                 ( moveOffset == -17 || moveOffset == -10 || moveOffset == 6 || moveOffset == 15 ) );
     }
 
     private static boolean isSecondColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.SECOND[piecePosition] && ( moveOffset == -10 || moveOffset == 6  ) );
+        return (BoardUtils.SECOND_COL[piecePosition] && ( moveOffset == -10 || moveOffset == 6  ) );
     }
 
     private static boolean isSeventhColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.SEVENTH[piecePosition] && ( moveOffset == -6 || moveOffset == 10) );
+        return (BoardUtils.SEVENTH_COL[piecePosition] && ( moveOffset == -6 || moveOffset == 10) );
     }
 
     private static boolean isEighthColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.EIGHTH[piecePosition] &&
+        return (BoardUtils.EIGHTH_COL[piecePosition] &&
                 ( moveOffset == 17 || moveOffset == 10 || moveOffset == -6 || moveOffset == -15 ) );
     }
 

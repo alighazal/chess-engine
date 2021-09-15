@@ -14,12 +14,14 @@ import java.util.Collection;
 import java.util.List;
 
 public class Bishop extends Piece {
-
+    
     private static final int[] POSSIBLE_MOVES_VECTOR = {-9, -7, 7, 9};
 
-    Bishop(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    Bishop(int piecePosition, Alliance pieceAlliance, boolean isFisrtMove) {
+        super(piecePosition, pieceAlliance, isFisrtMove);
     }
+    
+
 
     @Override
     public Collection<Move> possibleMoves(final Board board) {
@@ -57,10 +59,10 @@ public class Bishop extends Piece {
     }
 
     private static boolean isFirstColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.FIRST[piecePosition] && ( moveOffset == 7 || moveOffset == -9 ));
+        return (BoardUtils.FIRST_COL[piecePosition] && ( moveOffset == 7 || moveOffset == -9 ));
     }
     private static boolean isEighthColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.EIGHTH[piecePosition] && ( moveOffset == -7 || moveOffset == 9 ) );
+        return (BoardUtils.EIGHTH_COL[piecePosition] && ( moveOffset == -7 || moveOffset == 9 ) );
     }
 
 }

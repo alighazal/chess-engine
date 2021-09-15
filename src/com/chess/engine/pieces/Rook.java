@@ -16,10 +16,9 @@ import java.util.List;
 public class Rook extends Piece {
 
     private static final int[] POSSIBLE_MOVES_VECTOR = {-1, 1, 8, -8};
-
-
-    Rook(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    
+    Rook(int piecePosition, Alliance pieceAlliance, boolean isFisrtMove) {
+        super(piecePosition, pieceAlliance, isFisrtMove);
     }
 
     @Override
@@ -58,10 +57,10 @@ public class Rook extends Piece {
     }
 
     private static boolean isFirstColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.FIRST[piecePosition] && ( moveOffset == -1 ));
+        return (BoardUtils.FIRST_COL[piecePosition] && ( moveOffset == -1 ));
     }
     private static boolean isEighthColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.EIGHTH[piecePosition] && ( moveOffset == 1) );
+        return (BoardUtils.EIGHTH_COL[piecePosition] && ( moveOffset == 1) );
     }
 
 }

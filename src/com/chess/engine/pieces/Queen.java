@@ -12,12 +12,13 @@ import java.util.Collection;
 import java.util.List;
 
 public class Queen extends Piece{
-
+    
     private static final int[] POSSIBLE_MOVES_VECTOR = {-9, -8, -7, -1,1, 7, 8, 9};
 
-    Queen(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    Queen(int piecePosition, Alliance pieceAlliance, boolean isFisrtMove) {
+        super(piecePosition, pieceAlliance, isFisrtMove);
     }
+
 
 
     @Override
@@ -56,9 +57,9 @@ public class Queen extends Piece{
     }
 
     private static boolean isFirstColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.FIRST[piecePosition] && ( moveOffset == 7 || moveOffset == -9 || moveOffset == -1 ));
+        return (BoardUtils.FIRST_COL[piecePosition] && ( moveOffset == 7 || moveOffset == -9 || moveOffset == -1 ));
     }
     private static boolean isEighthColumnExclusion (int piecePosition, int moveOffset){
-        return (BoardUtils.EIGHTH[piecePosition] && ( moveOffset == -7 || moveOffset == 9 || moveOffset == 1 ) );
+        return (BoardUtils.EIGHTH_COL[piecePosition] && ( moveOffset == -7 || moveOffset == 9 || moveOffset == 1 ) );
     }
 }
